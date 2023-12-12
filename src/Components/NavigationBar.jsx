@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Nav from 'react-bootstrap/Nav';
+import { Nav, Button } from 'react-bootstrap';
+import "../App.css";
 
 const NavigationBar = () => {
     const [tabCount1, setTabCount1] = useState(0);
     const [tabCount2, setTabCount2] = useState(0);
     const [tabCount3, setTabCount3] = useState(0);
-
 
     useEffect(() => {
         const intervalId1 = setInterval(() => {
@@ -34,14 +34,14 @@ const NavigationBar = () => {
     };
 
     return (
-        <div>
+        <>
             <Nav>
-                <Nav.Link href="#">Count1: {tabCount1}</Nav.Link>
-                <Nav.Link href="#">Count2: {tabCount2}</Nav.Link>
-                <Nav.Link href="#">Count3: {tabCount3}</Nav.Link>
-            </Nav>
-            <button onClick={handleReset}>Reset</button>
-        </div>
+                <Nav.Link href="#" className='nav'> Count1: {tabCount1}</Nav.Link>
+                <Nav.Link href="#" className='nav'> Count2: {tabCount2}</Nav.Link>
+                <Nav.Link href="#" className='nav'> Count3: {tabCount3}</Nav.Link>
+            </Nav >
+            <Button onClick={handleReset}>Reset</Button>
+        </>
     );
 };
 
