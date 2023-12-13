@@ -8,28 +8,21 @@ const NavigationBar = () => {
   const [tabCount3, setTabCount3] = useState(0);
 
   useEffect(() => {
-    const intervalId1 = setInterval(() => {
-      setTabCount1((prevCount) => prevCount + 1);
+    setInterval(() => {
+      setTabCount1((tabCount1) => tabCount1 + 1);
     }, 3000);
 
-    const intervalId2 = setTimeout(() => {
+    setTimeout(() => {
       setInterval(() => {
-        setTabCount2((prevCount) => prevCount + 1);
+        setTabCount2((tabCount2) => tabCount2 + 1);
       }, 3000);
     }, 1000);
 
-    const intervalId3 = setTimeout(() => {
+    setTimeout(() => {
       setInterval(() => {
-        setTabCount3((prevCount) => prevCount + 1);
+        setTabCount3((tabCount3) => tabCount3 + 1);
       }, 3000);
     }, 2000);
-
-    // Cleanup intervals to avoid memory leaks
-    return () => {
-      clearInterval(intervalId1);
-      clearTimeout(intervalId2);
-      clearTimeout(intervalId3);
-    };
   }, []);
 
   const handleReset = () => {
@@ -42,15 +35,12 @@ const NavigationBar = () => {
     <>
       <Nav>
         <Nav.Link href="#" className="nav">
-          {" "}
           Count1: {tabCount1}
         </Nav.Link>
         <Nav.Link href="#" className="nav">
-          {" "}
           Count2: {tabCount2}
         </Nav.Link>
         <Nav.Link href="#" className="nav">
-          {" "}
           Count3: {tabCount3}
         </Nav.Link>
       </Nav>
